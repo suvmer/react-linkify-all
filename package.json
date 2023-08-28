@@ -1,0 +1,26 @@
+{
+  "name": "react-linkify-all",
+  "version": "1.0.1",
+  "description": "NPM package that converts text with links to array of React components. Customizable. Built-in support of emails, Telegram, Twitter links. Own pattern can be used to linkify everything!",
+  "author": "suvmer, https://github.com/suvmer",
+  "license": "MIT",
+  "homepage": "https://github.com/suvmer/react-linkify-all",
+  "repository": {
+    "type": "github",
+    "url": "https://github.com/suvmer/react-linkify-all.git"
+  },
+  "keywords": [
+    "react",
+    "linkify"
+  ],
+  "scripts": {
+    "compile": "npx tsc",
+    "prepublish": "npm run compile"
+  },
+  "main": "src/index.js",
+  "devDependencies": {
+    "@types/react": "^18.2.21",
+    "react": "^18.2.0",
+    "typescript": "^5.2.2"
+  }
+}
