@@ -1,5 +1,5 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 
-export type matchFn = (match:string, key:number) => ReactElement;
-export type highlightSetting = [regexp: RegExp, linkFn?: matchFn];
-export type highlightOptions =  highlightSetting | highlightSetting[];
+export type matchFn = (match:string, i:number, link:string) => ReactNode;
+export interface linkifySetting {regex: RegExp, component: matchFn, linkFn?:(match: string) => string, builtin?: string};
+export type linkifyOptions =  linkifySetting | linkifySetting[];
