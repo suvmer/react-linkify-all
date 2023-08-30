@@ -1,6 +1,6 @@
 {
   "name": "react-linkify-all",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "NPM package that makes links clickable in the text. Any pattern is also supported to highlight. Text with links turns into an array of React components. Customizable. Built-in support of emails, Telegram, Twitter links. Own patterns and components can be used to linkify everything!",
   "author": "suvmer, https://github.com/suvmer",
   "license": "MIT",

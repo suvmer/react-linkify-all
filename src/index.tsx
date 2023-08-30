@@ -62,7 +62,7 @@ const CommonOptions:{[property:string]:linkifySetting} = {
 
 interface LinkifyProps {
   children:ReactNode|ReactNode[]|string,
-  options:linkifySetting[],
+  options?:linkifySetting[],
   links?: boolean,
   emails?: boolean,
   tgs?: boolean,
@@ -71,8 +71,9 @@ interface LinkifyProps {
   component?: matchFn|null,
 }
 /*TODO 2908230210
-Показать функционал всплывающих окон при наведении на ссылку.
+1) Показать функционал всплывающих окон при наведении на ссылку.
 (это реализуемо с уже имеющимся функционалом, что здорово)
+2) Структуризовать
 */
 export const Linkify:React.FC<LinkifyProps> = ({children, options = [], links = true, emails = false, tgs = false, twitters = false, instagrams = false, component=null}:LinkifyProps) => {
   if(emails)
