@@ -62,7 +62,7 @@ const CommonOptions:{[property:string]:linkifySetting} = {
 
 interface LinkifyProps {
   children:ReactNode|ReactNode[]|string,
-  options?:linkifySetting[],
+  options?:linkifyOptions,
   links?: boolean,
   emails?: boolean,
   tgs?: boolean,
