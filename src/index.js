@@ -12,13 +12,18 @@ export const reactReplace = (text, regex, component, linkFn, counter = { i: 0 })
     ;
     return res;
 };
-const defaultComponent = (match, key, link) => React.createElement("a", { key: key, href: link }, match);
+const defaultComponent = (match, i, link) => React.createElement("a", { title: link, href: link }, match);
 export const linkify = (text, options) => {
+    console.log("options: ", options);
     let markOptions = Array.isArray(options) ? options : [options];
     let replacedText = Array.isArray(text) ? text : [text];
     let newText = [];
     markOptions.forEach(currentOptions => {
         let { regex, component = defaultComponent, linkFn = (match) => match } = currentOptions;
+        console.log("option: ");
+        console.log(regex);
+        console.log(component);
+        console.log(linkFn);
         const counter = { i: 0 };
         replacedText.forEach(subtext => {
             if (typeof (subtext) !== 'string') {
@@ -60,22 +65,23 @@ const CommonOptions = {
     }
 };
 /*TODO 2908230210
-Показать функционал всплывающих окон при наведении на ссылку.
+1) Показать функционал всплывающих окон при наведении на ссылку.
 (это реализуемо с уже имеющимся функционалом, что здорово)
+2) Структуризовать
 */
-export const Linkify = ({ children, links = true, emails = false, tgs = false, twitters = false, instagrams = false, component = null }) => {
-    const options = [];
+export const Linkify = ({ children, options = [], links = true, emails = false, tgs = false, twitters = false, instagrams = false, component = null }) => {
+    let markOptions = Array.isArray(options) ? options : [options];
     if (emails)
-        options.push(Object.assign(Object.assign({}, CommonOptions['EMAIL']), { component: component || CommonOptions['EMAIL'].component }));
+        markOptions.push(Object.assign(Object.assign({}, CommonOptions['EMAIL']), { component: component || CommonOptions['EMAIL'].component }));
     if (tgs)
-        options.push(Object.assign(Object.assign({}, CommonOptions['TG']), { component: component || CommonOptions['TG'].component }));
+        markOptions.push(Object.assign(Object.assign({}, CommonOptions['TG']), { component: component || CommonOptions['TG'].component }));
     if (twitters)
-        options.push(Object.assign(Object.assign({}, CommonOptions['TWITTER']), { component: component || CommonOptions['TWITTER'].component }));
+        markOptions.push(Object.assign(Object.assign({}, CommonOptions['TWITTER']), { component: component || CommonOptions['TWITTER'].component }));
     if (instagrams)
-        options.push(Object.assign(Object.assign({}, CommonOptions['INSTAGRAM']), { component: component || CommonOptions['INSTAGRAM'].component }));
+        markOptions.push(Object.assign(Object.assign({}, CommonOptions['INSTAGRAM']), { component: component || CommonOptions['INSTAGRAM'].component }));
     if (links)
-        options.push(Object.assign(Object.assign({}, CommonOptions['LINK']), { component: component || CommonOptions['LINK'].component }));
-    return linkify(children, options);
+        markOptions.push(Object.assign(Object.assign({}, CommonOptions['LINK']), { component: component || CommonOptions['LINK'].component }));
+    return linkify(children, markOptions);
 };
 export const Emails = ({ children, component = null }) => {
     console.log(children);

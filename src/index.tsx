@@ -11,14 +11,19 @@ export const reactReplace = (text:string, regex:RegExp, component:(match: string
   };
   return res;
 }
-const defaultComponent:matchFn = (match, i, link) => <a href={link}>{match}</a>;
+const defaultComponent:matchFn = (match, i, link) => <a title={link} href={link}>{match}</a>;
 
 export const linkify = (text:string|ReactNode|ReactNode[], options:linkifyOptions):ReactNode[] => {
+  console.log("options: ", options);
   let markOptions = Array.isArray(options) ? options : [options];
   let replacedText:ReactNode[] = Array.isArray(text) ? text : [text];
   let newText:ReactNode[] = [];
   (markOptions as linkifySetting[]).forEach(currentOptions => {
     let {regex, component = defaultComponent, linkFn = (match:string) => match} = currentOptions;
+    console.log("option: ");
+    console.log(regex);
+    console.log(component);
+    console.log(linkFn);
     const counter = {i: 0};
     replacedText.forEach(subtext => {
       if(typeof(subtext) !== 'string') {
@@ -76,17 +81,18 @@ interface LinkifyProps {
 2) Структуризовать
 */
 export const Linkify:React.FC<LinkifyProps> = ({children, options = [], links = true, emails = false, tgs = false, twitters = false, instagrams = false, component=null}:LinkifyProps) => {
+  let markOptions = Array.isArray(options) ? options : [options];
   if(emails)
-    options.push({...CommonOptions['EMAIL'], component: component || CommonOptions['EMAIL'].component});
+    markOptions.push({...CommonOptions['EMAIL'], component: component || CommonOptions['EMAIL'].component});
   if(tgs)
-    options.push({...CommonOptions['TG'], component: component || CommonOptions['TG'].component});
+    markOptions.push({...CommonOptions['TG'], component: component || CommonOptions['TG'].component});
   if(twitters)
-    options.push({...CommonOptions['TWITTER'], component: component || CommonOptions['TWITTER'].component});
+    markOptions.push({...CommonOptions['TWITTER'], component: component || CommonOptions['TWITTER'].component});
   if(instagrams)
-    options.push({...CommonOptions['INSTAGRAM'], component: component || CommonOptions['INSTAGRAM'].component});
+    markOptions.push({...CommonOptions['INSTAGRAM'], component: component || CommonOptions['INSTAGRAM'].component});
   if(links)
-    options.push({...CommonOptions['LINK'], component: component || CommonOptions['LINK'].component});
-  return linkify(children, options);
+    markOptions.push({...CommonOptions['LINK'], component: component || CommonOptions['LINK'].component});
+  return linkify(children, markOptions);
 }
 interface SingleProps {
   children:ReactNode|ReactNode[]|string,
