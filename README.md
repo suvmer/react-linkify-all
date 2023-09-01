@@ -5,6 +5,7 @@
 - [Basic Usage](#basic-usage)
 - [Own components and patterns](#own-components-and-patterns)
 - [Example with linkify() method](#example-with-linkify-method)
+- [Contacts](#contacts)
 
 ## Preview
 Try it on CodeSandBox: https://codesandbox.io/s/compassionate-meitner-y8d9l9
@@ -19,7 +20,7 @@ Code:
 
 ## Description
 
-Modal pop up on hover, clickable links in text - all is here. This is NPM package that converts text with links into an array of React components. Customizable. Built-in support of emails, Telegram, Twitter mentions. Modal pop up can be implemented as it shown above. Own pattern can be used to linkify everything
+Modal pop up on hover, clickable links in text - everything is here. This is NPM package that converts text with links into an array of React components. Customizable. Built-in support of emails, Telegram, Twitter mentions. Modal pop up can be implemented as it shown above. Own pattern can be used to linkify everything
 
 ## Installation
 ```sh
@@ -117,3 +118,7 @@ const Card = (text) => {
     return <div>{result}</div>;
 }
 ```
+
+# Contacts
+If you want to contact me, send an email to suvmers@gmail.com  
+I'm also available on Telegram: https://t.me/suvmers
