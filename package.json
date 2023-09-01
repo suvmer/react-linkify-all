@@ -1,7 +1,7 @@
 {
   "name": "react-linkify-all",
-  "version": "1.2.0",
-  "description": "NPM package that makes links clickable in the text. Any pattern is also supported to highlight. Text with links turns into an array of React components. Customizable. Built-in support of emails, Telegram, Twitter links. Own patterns and components can be used to linkify everything!",
+  "version": "1.3.0",
+  "description": "Modal pop up on hover, clickable links in text - all is here. This is NPM package that converts text with links into an array of React components. Customizable. Built-in support of emails, Telegram, Twitter mentions. Own pattern can be used to linkify everything",
   "author": "suvmer, https://github.com/suvmer",
   "license": "MIT",
   "homepage": "https://github.com/suvmer/react-linkify-all",
@@ -19,7 +19,11 @@
     "autolink",
     "url",
     "email",
-    "regex"
+    "regex",
+    "modal",
+    "popup",
+    "pop-up",
+    "hover"
   ],
   "scripts": {
     "compile": "npx tsc",

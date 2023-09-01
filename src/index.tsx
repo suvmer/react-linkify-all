@@ -75,12 +75,7 @@ interface LinkifyProps {
   instagrams?: boolean
   component?: matchFn|null,
 }
-/*TODO 2908230210
-1) Показать функционал всплывающих окон при наведении на ссылку.
-(это реализуемо с уже имеющимся функционалом, что здорово)
-2) Структуризовать
-*/
-export const Linkify:React.FC<LinkifyProps> = ({children, options = [], links = true, emails = false, tgs = false, twitters = false, instagrams = false, component=null}:LinkifyProps) => {
+export const Linkify:React.FC<LinkifyProps> = ({children, options = [], links = false, emails = false, tgs = false, twitters = false, instagrams = false, component=null}:LinkifyProps) => {
   let markOptions = Array.isArray(options) ? options : [options];
   if(emails)
     markOptions.push({...CommonOptions['EMAIL'], component: component || CommonOptions['EMAIL'].component});
