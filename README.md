@@ -32,9 +32,10 @@ import { Linkify } from 'react-linkify-all'
 ...
 <Linkify links twitters emails>Some text with links.net, @twitters and emails@domain.org</Linkify>
 ```
-Props like "twitters", "emails" could be added optionally.
+Available props: *emails, instagrams, links, tgs, twitters*  
+And their corresponding components: ```<Emails/>, <Instagrams/>, <Links/>, <Tgs/>, <Twitters/>```  
 
-Also you can use ```<Emails/>, <Twitters/>, <Tgs/>, ... ``` and method ```linkify()``` to linkify.
+Also you can use method ```linkify()``` to linkify(an example is given below).
 
 ### Example with react components:
 ![](linkify_links.gif)
