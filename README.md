@@ -34,7 +34,7 @@ import { Linkify } from 'react-linkify-all'
 ```
 Props like "twitters", "emails" could be added optionally.
 
-You can also use \<Emails/\>, \<Twitters/\>, \<Tgs\/>, ... and method linkify() to linkify.
+Also you can use ```<Emails/>, <Twitters/>, <Tgs/>, ... ``` and method ```linkify()``` to linkify.
 
 ### Example with react components:
 ![](linkify_links.gif)
@@ -45,7 +45,7 @@ Code:
 Result HTML:
 ![](linkify_1.png)
 
-**Nesting is not supported yet:** use <Linkify links twitters emails.../> to summarize effects
+**Nesting is not supported yet:** use ``` <Linkify links twitters emails... /> ``` to summarize effects
 
 ## Own components and patterns
 You could use your own component for links:
@@ -63,9 +63,9 @@ Parameters "match" and "link" may differ.
 ```jsx
 <Links>site.com</Links>
 ```
-match: site.com  
-link: https://site.com  
-i: 1  
+**match**: site.com  
+**link**: https://site.com  
+**i**: 1  
 
 ### Creating own patterns
 Every pattern for linkify is set by an object:
