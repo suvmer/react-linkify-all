@@ -120,6 +120,6 @@ const Card = (text) => {
 ```
 
 # Contacts
-If you find react-linkify-all to be useful in your project, please consider to star and support it: https://github.com/suvmer/react-linkify-all
+If you find react-linkify-all to be useful in your project, please consider to star and support it: https://github.com/suvmer/react-linkify-all  
 If you want to contact me, send an email to suvmers@gmail.com  
 I'm also available on Telegram: https://t.me/suvmers
