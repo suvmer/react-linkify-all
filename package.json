@@ -1,6 +1,6 @@
 {
   "name": "react-linkify-all",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "description": "Modal pop up on hover, clickable links in text - everything is here. This is NPM package that converts text with links into an array of React components. Customizable. Built-in support of emails, Telegram, Twitter mentions. Own pattern can be used to linkify everything",
   "author": "suvmer, https://github.com/suvmer",
   "license": "MIT",
