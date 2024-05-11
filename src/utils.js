@@ -9,7 +9,7 @@ export const CommonOptions = {
     "TG": {
         regex: new RegExp("((?<=\\B)@[a-zA-Z0-9_]{5,32}(?=\\b))", "g"),
         component: defaultComponent,
-        linkFn: match => "https://tg.me/" + match.substring(1)
+        linkFn: match => "https://t.me/" + match.substring(1)
     },
     "EMAIL": {
         regex: /((?:(?:(?:[^<>()\[\]\\.,;:\s@"]+(?:\.[^<>()\[\]\\.,;:\s@"]+)*)|(?:".+"))@(?:(?:\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(?:(?:[a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))))/g,
