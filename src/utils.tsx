@@ -1,5 +1,5 @@
 import React, { ReactNode } from 'react';
-import { linkifySetting, matchFn } from "types";
+import { linkifySetting, matchFn } from "./types";
 
 export const defaultComponent:matchFn = (match, i, link) => <a title={link} href={link}>{match}</a>;
 export const CommonOptions:{[property:string]:linkifySetting} = {
